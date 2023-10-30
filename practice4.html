@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Multiplication Table</title>
+</head>
+
+<body>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number = $_POST["number"];
+    ?>
+
+    <h2>Multiplication Table up to <?php echo $number; ?></h2>
+    
+    <table>
+        <tr>
+            <th>&times;</th>
+            <?php
+            for ($i = 1; $i <= $number; $i++) {
+                echo "<th>$i</th>";
+            }
+            ?>
+        </tr>
+
+        <?php
+        for ($i = 1; $i <= $number; $i++) {
+            echo "<tr>";
+            echo "<th>$i</th>";
+            for ($j = 1; $j <= $number; $j++) {
+                echo "<td>" . ($i * $j) . "</td>";
+            }
+            echo "</tr>";
+        }
+        ?>
+    </table>
+
+<?php } else { ?>
+    
+    <h2>Enter a number to generate the multiplication table:</h2>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="number">Number:</label>
+        <input type="number" name="number" required>
+        <input type="submit" value="Generate Table">
+    </form>
+
+<?php } ?>
+
+</body>
+
+</html>

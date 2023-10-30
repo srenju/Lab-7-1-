@@ -1,0 +1,34 @@
+.profile {
+    text-align: center;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  
+p {
+    padding: 10px;
+    border: 2px solid black;
+  }
+  
+label, input, button {
+    margin-top: 10px;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+th {
+    background-color: #f2f2f2;
+  }
+  
